@@ -5,6 +5,7 @@ import noImage from './assets/no_image.png';
 import image from './assets/alex-ZR48YvUpk04-unsplash.jpg';
 import { newsCategoriesList } from './constants/news-categories';
 import { newsCountriesList } from './constants/news-countries';
+import { newsLanguagesList } from './constants/news-languages';
 import {
   Image,
   Container,
@@ -21,19 +22,45 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      articles: []
+      articles: [],
+      country: 'ca',
+      category: 'general'
     };
   }
 
+  handleCountryDropdownChange = (e, data) => {
+    e.persist();
+    this.setState({ country: data.value });
+  };
+
+  handleCategoryDropdownChange = (e, data) => {
+    e.persist();
+    this.setState({ category: data.value });
+  };
+
   componentDidMount() {
     fetch(
-      `http://newsapi.org/v2/everything?q=bitcoin&language=en&from=2020-02-25&sortBy=publishedAt&apiKey=${API_KEY}`
+      `http://newsapi.org/v2/top-headlines?country=${this.state.country}&category=${this.state.category}&apiKey=${API_KEY}`
     )
       .then(response => {
         return response.json();
       })
       .then(json => {
-        console.log(json);
+        this.setState({
+          articles: json.articles
+        });
+      });
+  }
+
+  componentDidUpdate() {
+    fetch(
+      `http://newsapi.org/v2/top-headlines?country=${this.state.country}&category=${this.state.category}&apiKey=${API_KEY}`
+      // `http://newsapi.org/v2/everything?q=bitcoin&language=en&from=2020-02-25&sortBy=publishedAt&apiKey=${API_KEY}`
+    )
+      .then(response => {
+        return response.json();
+      })
+      .then(json => {
         this.setState({
           articles: json.articles
         });
@@ -55,6 +82,7 @@ class App extends Component {
               inline
               item
               placeholder="Country"
+              onChange={this.handleCountryDropdownChange}
               options={newsCountriesList}
             />
             <Dropdown
@@ -62,11 +90,19 @@ class App extends Component {
               inline
               item
               placeholder="Category"
+              onChange={this.handleCategoryDropdownChange}
               options={newsCategoriesList}
             />
-            <Dropdown openOnFocus inline item placeholder="Language" />
-            <MenuItem position="right">
-              <div className="ui right aligned category search">
+
+            <div class="right menu">
+              <Dropdown
+                openOnFocus
+                inline
+                item
+                placeholder="Language"
+                options={newsLanguagesList}
+              />
+              <div class="item">
                 <div className="ui icon input">
                   <input
                     className="prompt"
@@ -77,7 +113,7 @@ class App extends Component {
                 </div>
                 <div className="results" />
               </div>
-            </MenuItem>
+            </div>
           </Container>
         </Menu>
         <News articles={this.state.articles} />
