@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button
-} from 'reactstrap';
+import { Card, Image, Button, Icon } from 'semantic-ui-react';
 import noImage from '../assets/no_image.png';
 import dateFormat from 'dateformat';
 
@@ -15,53 +7,41 @@ export class News extends Component {
   render() {
     return (
       <div>
-        {this.props.articles.map((item, index) => {
-          return (
-            <div>
-              <Card>
-                <CardImg
-                  className="img-fluid"
-                  top
-                  height="400px"
-                  src={item.urlToImage === null ? noImage : item.urlToImage}
-                />
-                <CardBody>
-                  <CardTitle>
-                    <h3>
-                      <b>{item.title}</b>
-                    </h3>
-                  </CardTitle>
-                  <CardSubtitle>{item.source.name}</CardSubtitle>
-                  <CardSubtitle>
-                    <p style={{ fontStyle: 'italic' }}>
-                      {dateFormat(
-                        item.publishedAt,
-                        'ddd, mmmm dS, yyyy, h:MM TT'
-                      )}
-                    </p>
-                  </CardSubtitle>
-                  <CardText>{item.description}</CardText>
-                  <Button
-                    href={item.url}
-                    target="_blank"
-                    style={{ margin: '3px' }}
-                  >
-                    Read More...
-                  </Button>
-                  <br></br>
-                  <Button
-                    href={item.url}
-                    target="_blank"
-                    alt="Card image cap"
-                    style={{ margin: '3px' }}
-                  >
-                    Website
-                  </Button>
-                </CardBody>
-              </Card>
-            </div>
-          );
-        })}
+        <Card.Group>
+          {this.props.articles.map((item, index) => (
+            <Card key={index} color="grey" centered>
+              <Image
+                label={{
+                  color: 'grey',
+                  content: `${item.source.name}`,
+                  ribbon: true
+                }}
+                src={item.urlToImage === null ? noImage : item.urlToImage}
+              />
+              <Card.Content>
+                <Card.Meta>
+                  {dateFormat(item.publishedAt, 'ddd, mmmm dS - h:MM TT')}
+                </Card.Meta>
+                <br />
+                <Card.Header>{item.title}</Card.Header>
+                <br />
+                <Card.Description>{item.description}</Card.Description>
+              </Card.Content>
+              <br />
+              <Button
+                animated="vertical"
+                color="grey"
+                href={item.url}
+                target="_blank"
+              >
+                <Button.Content visible>Read more...</Button.Content>
+                <Button.Content hidden>
+                  <Icon name="arrow right" />
+                </Button.Content>
+              </Button>
+            </Card>
+          ))}
+        </Card.Group>
       </div>
     );
   }

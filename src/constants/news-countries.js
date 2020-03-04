@@ -1,7 +1,7 @@
 export const newsCountriesList = [
   {
     key: 1,
-    text: 'United Arab Emirates',
+    text: 'UAE',
     value: 'ae'
   },
   {
@@ -81,7 +81,7 @@ export const newsCountriesList = [
   },
   {
     key: 17,
-    text: 'United Kingdom',
+    text: 'UK',
     value: 'gb'
   },
   {
