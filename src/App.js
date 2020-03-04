@@ -52,7 +52,7 @@ class App extends Component {
 
   fetchTopHeadlines(country, category, page) {
     fetch(
-      `http://newsapi.org/v2/top-headlines?country=${country}&category=${category}&pageSize=20&page=${page}&apiKey=${API_KEY}`
+      `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&pageSize=20&page=${page}&apiKey=${API_KEY}`
     )
       .then(response => {
         console.log(response);
@@ -68,7 +68,7 @@ class App extends Component {
 
   fetchNewsWithKeywords(keyword, activePage) {
     fetch(
-      `http://newsapi.org/v2/everything?q=${keyword}&language=${this.state.language}&from=${this.state.date}&sortBy=publishedAt&pageSize=20&page=${activePage}&apiKey=${API_KEY}`
+      `https://newsapi.org/v2/everything?q=${keyword}&language=${this.state.language}&from=${this.state.date}&sortBy=publishedAt&pageSize=20&page=${activePage}&apiKey=${API_KEY}`
     )
       .then(response => {
         console.log(response);
