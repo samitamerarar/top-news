@@ -2,6 +2,7 @@
   "name": "news-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://samit574.github.io/news-app/",
   "dependencies": {
     "ajv": "^6.12.0",
     "bootstrap": "^4.4.1",
@@ -28,6 +29,5 @@
   },
   "devDependencies": {
     "gh-pages": "^2.2.0"
-  },
-  "homepage": "http://samit574.github.io/news-reactjs"
+  }
 }
