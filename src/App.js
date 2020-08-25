@@ -137,7 +137,7 @@ class App extends Component {
       <div>
         <Menu inverted stackable attached>
           <Container>
-            <a href="news-app" style={{ display: "flex", textDecoration: "none" }}>
+            <a href="top-news" style={{ display: "flex", textDecoration: "none" }}>
               <Menu.Item color="red" active header>
                 Top News
               </Menu.Item>
@@ -222,7 +222,7 @@ class App extends Component {
           <div className="searchResults">
             <h2 className="ui header">Showing search results for '{this.state.keywordTyped}'</h2>
             <div className="ui header searchResults">
-              <a href="news-app" style={{ textDecoration: "none", outline: "none" }}>
+              <a href="top-news" style={{ textDecoration: "none", outline: "none" }}>
                 Go back to Canada Top News
               </a>
             </div>
