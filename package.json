@@ -2,6 +2,7 @@
   "name": "top-news",
   "version": "0.1.0",
   "private": true,
+  "proxy" : "https://newsapi.org/",
   "homepage": "https://samitamerarar.github.io/top-news/",
   "dependencies": {
     "ajv": "^6.12.0",
@@ -20,12 +21,12 @@
     "semantic-ui-react": "^0.88.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   },
   "devDependencies": {
     "gh-pages": "^2.2.0"
