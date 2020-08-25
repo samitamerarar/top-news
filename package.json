@@ -2,7 +2,6 @@
   "name": "top-news",
   "version": "0.1.0",
   "private": true,
-  "proxy" : "https://newsapi.org/",
   "homepage": "https://samitamerarar.github.io/top-news/",
   "dependencies": {
     "ajv": "^6.12.0",

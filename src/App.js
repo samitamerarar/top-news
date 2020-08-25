@@ -10,6 +10,7 @@ import dateFormat from "dateformat";
 import "fomantic-ui-css/semantic.css";
 
 const API_KEY = "3b988ce4f31c473fae5bfd8fc5b274a5";
+const proxyUrl = "https://cors-anywhere.herokuapp.com/"; // Proxy for CORS issue with apinews.org
 
 class App extends Component {
   constructor(props) {
@@ -41,7 +42,7 @@ class App extends Component {
 
   fetchTopHeadlines(country, category, page) {
     fetch(
-      `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&pageSize=20&page=${page}&apiKey=${API_KEY}`
+      `${proxyUrl}https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&pageSize=20&page=${page}&apiKey=${API_KEY}`
     )
       .then((response) => {
         if (response.ok) {
@@ -65,7 +66,7 @@ class App extends Component {
   fetchNewsWithKeywords(keyword, activePage) {
     if (keyword.length > 0) {
       fetch(
-        `https://newsapi.org/v2/everything?q=${keyword}&language=${this.state.language}&from=${this.state.date}&sortBy=publishedAt&pageSize=20&page=${activePage}&apiKey=${API_KEY}`
+        `${proxyUrl}https://newsapi.org/v2/everything?q=${keyword}&language=${this.state.language}&from=${this.state.date}&sortBy=publishedAt&pageSize=20&page=${activePage}&apiKey=${API_KEY}`
       )
         .then((response) => {
           if (response.ok) {
