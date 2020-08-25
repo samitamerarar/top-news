@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -11,13 +11,13 @@ import {
   MDBDropdown,
   MDBDropdownToggle,
   MDBDropdownMenu,
-  MDBDropdownItem
-} from 'mdbreact';
-import { BrowserRouter as Router } from 'react-router-dom';
+  MDBDropdownItem,
+} from "mdbreact";
+import { BrowserRouter as Router } from "react-router-dom";
 
 class NavbarPage extends Component {
   state = {
-    isOpen: false
+    isOpen: false,
   };
 
   toggleCollapse = () => {
@@ -25,10 +25,9 @@ class NavbarPage extends Component {
   };
 
   render() {
-    const dodgerBlue = { backgroundColor: '#1E90FF' };
     return (
       <Router>
-        <MDBNavbar style={dodgerBlue} color="indigo" dark expand="md">
+        <MDBNavbar dark expand="md">
           <MDBNavbarBrand>
             <strong className="white-text">News</strong>
           </MDBNavbarBrand>
@@ -46,12 +45,8 @@ class NavbarPage extends Component {
                   <MDBDropdownMenu>
                     <MDBDropdownItem href="#!">Action</MDBDropdownItem>
                     <MDBDropdownItem href="#!">Another Action</MDBDropdownItem>
-                    <MDBDropdownItem href="#!">
-                      Something else here
-                    </MDBDropdownItem>
-                    <MDBDropdownItem href="#!">
-                      Something else here
-                    </MDBDropdownItem>
+                    <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
+                    <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
                   </MDBDropdownMenu>
                 </MDBDropdown>
               </MDBNavItem>
@@ -63,12 +58,8 @@ class NavbarPage extends Component {
                   <MDBDropdownMenu>
                     <MDBDropdownItem href="#!">Action</MDBDropdownItem>
                     <MDBDropdownItem href="#!">Another Action</MDBDropdownItem>
-                    <MDBDropdownItem href="#!">
-                      Something else here
-                    </MDBDropdownItem>
-                    <MDBDropdownItem href="#!">
-                      Something else here
-                    </MDBDropdownItem>
+                    <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
+                    <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
                   </MDBDropdownMenu>
                 </MDBDropdown>
               </MDBNavItem>
@@ -80,12 +71,8 @@ class NavbarPage extends Component {
                   <MDBDropdownMenu>
                     <MDBDropdownItem href="#!">Action</MDBDropdownItem>
                     <MDBDropdownItem href="#!">Another Action</MDBDropdownItem>
-                    <MDBDropdownItem href="#!">
-                      Something else here
-                    </MDBDropdownItem>
-                    <MDBDropdownItem href="#!">
-                      Something else here
-                    </MDBDropdownItem>
+                    <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
+                    <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
                   </MDBDropdownMenu>
                 </MDBDropdown>
               </MDBNavItem>

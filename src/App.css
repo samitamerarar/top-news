@@ -23,6 +23,18 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.searchResults {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin-top: 1em !important;
+  margin-bottom: 2em !important;
 }
