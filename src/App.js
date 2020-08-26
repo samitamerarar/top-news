@@ -10,6 +10,8 @@ import axios from "axios";
 
 import "fomantic-ui-css/semantic.css";
 
+const herokuapi = "https://top-news-webapp.herokuapp.com";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -41,7 +43,7 @@ class App extends Component {
 
   fetchTopHeadlines = (country, category, page) => {
     axios
-      .get("/TopHeadlines", {
+      .get(`${herokuapi}/TopHeadlines`, {
         params: {
           country,
           category,
@@ -71,7 +73,7 @@ class App extends Component {
   fetchNewsWithKeywords(keyword, activePage) {
     if (keyword.length > 0) {
       axios
-        .get("/SearchResults", {
+        .get(`${herokuapi}/SearchResults`, {
           params: {
             keyword,
             activePage,
@@ -150,7 +152,7 @@ class App extends Component {
       <div>
         <Menu inverted stackable attached>
           <Container>
-            <a href="/" style={{ display: "flex", textDecoration: "none" }}>
+            <a href="top-news" style={{ display: "flex", textDecoration: "none" }}>
               <Menu.Item color="red" active header>
                 Top News
               </Menu.Item>
@@ -235,7 +237,7 @@ class App extends Component {
           <div className="searchResults">
             <h2 className="ui header">Showing search results for '{this.state.keywordTyped}'</h2>
             <div className="ui header searchResults">
-              <a href="/" style={{ textDecoration: "none", outline: "none" }}>
+              <a href="top-news" style={{ textDecoration: "none", outline: "none" }}>
                 Go back to Canada Top News
               </a>
             </div>
