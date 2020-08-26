@@ -1,0 +1,47 @@
+{
+  "name": "top-news",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:5000",
+  "homepage": "https://samitamerarar.github.io/top-news/",
+  "dependencies": {
+    "ajv": "^6.12.0",
+    "axios": "^0.20.0",
+    "bootstrap": "^4.4.1",
+    "dateformat": "^3.0.3",
+    "fomantic-ui-css": "^2.8.4",
+    "gulp": "^4.0.2",
+    "gulp-print": "^5.0.0",
+    "jquery": "^3.5.1",
+    "mdbreact": "^4.25.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "^3.4.3",
+    "react-stonecutter": "^0.3.10",
+    "reactstrap": "^8.4.1",
+    "semantic-ui-react": "^0.88.2"
+  },
+  "scripts": {
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
