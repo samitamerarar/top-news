@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/top-news/static/css/main.041cd744.chunk.css",
-    "main.js": "/top-news/static/js/main.f6ffd07b.chunk.js",
-    "main.js.map": "/top-news/static/js/main.f6ffd07b.chunk.js.map",
+    "main.css": "/top-news/static/css/main.801b13fb.chunk.css",
+    "main.js": "/top-news/static/js/main.f554a327.chunk.js",
+    "main.js.map": "/top-news/static/js/main.f554a327.chunk.js.map",
     "runtime-main.js": "/top-news/static/js/runtime-main.8357f764.js",
     "runtime-main.js.map": "/top-news/static/js/runtime-main.8357f764.js.map",
     "static/css/2.098cadf6.chunk.css": "/top-news/static/css/2.098cadf6.chunk.css",
     "static/js/2.48fab381.chunk.js": "/top-news/static/js/2.48fab381.chunk.js",
     "static/js/2.48fab381.chunk.js.map": "/top-news/static/js/2.48fab381.chunk.js.map",
     "index.html": "/top-news/index.html",
-    "precache-manifest.c3537766d07a97b2e76ddae381e1014f.js": "/top-news/precache-manifest.c3537766d07a97b2e76ddae381e1014f.js",
+    "precache-manifest.d2a307c5d0e1df296340bc75f80e23fd.js": "/top-news/precache-manifest.d2a307c5d0e1df296340bc75f80e23fd.js",
     "service-worker.js": "/top-news/service-worker.js",
     "static/css/2.098cadf6.chunk.css.map": "/top-news/static/css/2.098cadf6.chunk.css.map",
-    "static/css/main.041cd744.chunk.css.map": "/top-news/static/css/main.041cd744.chunk.css.map",
+    "static/css/main.801b13fb.chunk.css.map": "/top-news/static/css/main.801b13fb.chunk.css.map",
     "static/js/2.48fab381.chunk.js.LICENSE.txt": "/top-news/static/js/2.48fab381.chunk.js.LICENSE.txt",
     "static/media/semantic.css": "/top-news/static/media/outline-icons.ece54318.ttf",
     "static/media/no_image.png": "/top-news/static/media/no_image.cdaec342.png"
@@ -21,7 +21,7 @@
     "static/js/runtime-main.8357f764.js",
     "static/css/2.098cadf6.chunk.css",
     "static/js/2.48fab381.chunk.js",
-    "static/css/main.041cd744.chunk.css",
-    "static/js/main.f6ffd07b.chunk.js"
+    "static/css/main.801b13fb.chunk.css",
+    "static/js/main.f554a327.chunk.js"
   ]
 }
