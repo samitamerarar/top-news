@@ -1,14 +1,12 @@
+# Top News
+
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
 ## Available
 
 https://samitamerarar.github.io/top-news/
 
-
 ## Table of Contents
-
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 - [Updating to New Releases](#updating-to-new-releases)
 - [Folder Structure](#folder-structure)
@@ -36,7 +34,6 @@ To update an existing project to a new version of `react-scripts`, [open the cha
 In most cases bumping the `react-scripts` version in `package.json` and running `npm install` in this folder should be enough, but it’s good to consult the [changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md) for potential breaking changes.
 
 We commit to keeping the breaking changes minimal so you can upgrade `react-scripts` painlessly.
-
 
 ## Folder Structure
 
@@ -98,7 +95,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
-
 
 ### `npm run eject`
 
