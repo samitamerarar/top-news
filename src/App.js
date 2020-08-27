@@ -257,11 +257,17 @@ class App extends Component {
               style={{
                 color: "red",
                 visibility: "hidden",
-                animation: "0s linear 2s forwards delayedShow",
+                animation: "0s linear 0s forwards delayedShow",
               }}
             >
-              Unable to fetch from the API: daily quota reached.
+              <div>{"Unable to contact the server"}</div>
             </h3>
+            <a
+              href="https://samitamerarar.github.io/top-news"
+              style={{ textDecoration: "none", outline: "none" }}
+            >
+              {"The server might be sleeping, please refresh the page"}
+            </a>
           </div>
         )}
 
