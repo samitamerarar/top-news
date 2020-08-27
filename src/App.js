@@ -257,7 +257,7 @@ class App extends Component {
               style={{
                 color: "red",
                 visibility: "hidden",
-                animation: "0s linear 0s forwards delayedShow",
+                animation: "0s linear 2s forwards delayedShow",
               }}
             >
               <div>{"Unable to contact the server"}</div>
