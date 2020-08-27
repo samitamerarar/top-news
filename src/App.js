@@ -251,13 +251,17 @@ class App extends Component {
         )}
 
         {this.state.dailyQuotaReached && (
-          <div className="searchResults">
+          <div
+            className="searchResults"
+            style={{
+              visibility: "hidden",
+              animation: "0s linear 2s forwards delayedShow",
+            }}
+          >
             <h3
               className="ui header"
               style={{
                 color: "red",
-                visibility: "hidden",
-                animation: "0s linear 2s forwards delayedShow",
               }}
             >
               <div>{"Unable to contact the server"}</div>
