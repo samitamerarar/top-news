@@ -255,7 +255,7 @@ class App extends Component {
             className="searchResults"
             style={{
               visibility: "hidden",
-              animation: "0s linear 2s forwards delayedShow",
+              animation: "0s linear 4s forwards delayedShow",
             }}
           >
             <h3
