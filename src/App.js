@@ -9,6 +9,7 @@ import dateFormat from "dateformat";
 import axios from "axios";
 
 import "fomantic-ui-css/semantic.css";
+import Loading from "./components/Loading";
 
 const herokuapi = "https://top-news-webapp.herokuapp.com";
 
@@ -26,7 +27,8 @@ class App extends Component {
       page: "1",
       showHeadlines: true,
       keywordTyped: "",
-      dailyQuotaReached: true,
+      dailyQuotaReached: false,
+      loading: true,
     };
 
     // binding for future use with child component
@@ -42,6 +44,7 @@ class App extends Component {
   };
 
   fetchTopHeadlines = (country, category, page) => {
+    this.setState({ loading: true, dailyQuotaReached: false, showHeadlines: true });
     axios
       .get(`${herokuapi}/TopHeadlines`, {
         params: {
@@ -55,23 +58,28 @@ class App extends Component {
           this.setState({
             totalResults: response.data.totalResults,
             articles: response.data.articles,
-            dailyQuotaReached: false,
           });
         } else {
           this.setState({
             dailyQuotaReached: true,
           });
         }
+        this.setState({ loading: false });
       })
       .catch((error) => {
         console.log(error.message);
+        this.setState({ loading: false, dailyQuotaReached: true });
       });
-
-    this.setState({ showHeadlines: true });
   };
 
   fetchNewsWithKeywords(keyword, activePage) {
     if (keyword.length > 0) {
+      this.setState({
+        loading: true,
+        dailyQuotaReached: false,
+        showHeadlines: false,
+        keywordTyped: keyword,
+      });
       axios
         .get(`${herokuapi}/SearchResults`, {
           params: {
@@ -86,19 +94,18 @@ class App extends Component {
             this.setState({
               totalResults: response.data.totalResults,
               articles: response.data.articles,
-              dailyQuotaReached: false,
             });
           } else {
             this.setState({
               dailyQuotaReached: true,
             });
           }
+          this.setState({ loading: false });
         })
         .catch((error) => {
           console.log(error.message);
+          this.setState({ loading: false, dailyQuotaReached: true });
         });
-
-      this.setState({ showHeadlines: false, keywordTyped: keyword });
     }
   }
 
@@ -251,13 +258,7 @@ class App extends Component {
         )}
 
         {this.state.dailyQuotaReached && (
-          <div
-            className="searchResults"
-            style={{
-              visibility: "hidden",
-              animation: "0s linear 4s forwards delayedShow",
-            }}
-          >
+          <div className="searchResults">
             <h3
               className="ui header"
               style={{
@@ -266,14 +267,10 @@ class App extends Component {
             >
               <div>{"Unable to contact the server"}</div>
             </h3>
-            <a
-              href="https://samitamerarar.github.io/top-news"
-              style={{ textDecoration: "none", outline: "none" }}
-            >
-              {"The server might be sleeping, please refresh the page"}
-            </a>
           </div>
         )}
+
+        {this.state.loading && <Loading />}
 
         <News articles={this.state.articles} />
         <div

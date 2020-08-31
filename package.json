@@ -16,6 +16,7 @@
     "mdbreact": "^4.25.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-loading": "^2.0.3",
     "react-scripts": "^3.4.3",
     "react-stonecutter": "^0.3.10",
     "reactstrap": "^8.4.1",
