@@ -11,7 +11,7 @@ import axios from "axios";
 import "fomantic-ui-css/semantic.css";
 import Loading from "./components/Loading";
 
-const herokuapi = "https://topnews-api.samiarar.com";
+const apihosturl = "https://topnews-api.samiarar.com";
 
 class App extends Component {
   constructor(props) {
@@ -46,7 +46,7 @@ class App extends Component {
   fetchTopHeadlines = (country, category, page) => {
     this.setState({ loading: true, dailyQuotaReached: false, showHeadlines: true });
     axios
-      .get(`${herokuapi}/TopHeadlines`, {
+      .get(`${apihosturl}/TopHeadlines`, {
         params: {
           country,
           category,
@@ -81,7 +81,7 @@ class App extends Component {
         keywordTyped: keyword,
       });
       axios
-        .get(`${herokuapi}/SearchResults`, {
+        .get(`${apihosturl}/SearchResults`, {
           params: {
             keyword,
             activePage,
