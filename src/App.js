@@ -11,7 +11,7 @@ import axios from "axios";
 import "fomantic-ui-css/semantic.css";
 import Loading from "./components/Loading";
 
-const herokuapi = "https://top-news-webapp.herokuapp.com";
+const herokuapi = "https://topnews-api.samiarar.com";
 
 class App extends Component {
   constructor(props) {
