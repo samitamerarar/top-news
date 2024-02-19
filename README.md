@@ -6,6 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 https://samitamerarar.github.io/top-news/
 
+## Backend
+
+[top-news-api](https://github.com/samitamerarar/top-news-api)
+
 ## Available Scripts
 
 In the project directory, you can run:
